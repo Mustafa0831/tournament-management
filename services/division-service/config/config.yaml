@@ -1,0 +1,8 @@
+server:
+  port: 8082
+database:
+  host: database
+  port: 5432
+  user: user
+  password: password
+  dbname: tournament

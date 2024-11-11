@@ -1,0 +1,8 @@
+server:
+  port: 8080
+services:
+  teamService: http://team-service:8081
+  divisionService: http://division-service:8082
+  matchService: http://match-service:8083
+  playoffService: http://playoff-service:8084
+  resultGenerationService: http://result-generation-service:8085
