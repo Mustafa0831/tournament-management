@@ -2,7 +2,10 @@ version: '3.8'
 
 services:
   api-gateway:
-    build: ./api-gateway
+    build:
+      context: .
+      dockerfile: ./api-gateway/Dockerfile
+
     ports:
       - "8080:8080"
     depends_on:
@@ -14,7 +17,9 @@ services:
     networks:
       - backend
   team-service:
-    build: ./services/team-service
+    build:
+      context: .
+      dockerfile: ./services/team-service/Dockerfile
     ports:
       - "8091:8081"
     depends_on:
@@ -23,7 +28,9 @@ services:
       - backend
 
   division-service:
-    build: ./services/division-service
+    build:
+      context: .
+      dockerfile: ./services/division-service/Dockerfile
     ports:
       - "8082:8082"
     depends_on:
@@ -32,7 +39,9 @@ services:
       - backend
 
   match-service:
-    build: ./services/match-service
+    build:
+      context: .
+      dockerfile: ./services/match-service/Dockerfile
     ports:
       - "8093:8083"
     depends_on:
@@ -41,7 +50,9 @@ services:
       - backend
 
   playoff-service:
-    build: ./services/playoff-service
+    build:
+      context: .
+      dockerfile: ./services/playoff-service/Dockerfile
     ports:
       - "8084:8084"
     depends_on:
@@ -50,7 +61,9 @@ services:
       - backend
 
   result-generation-service:
-    build: ./services/result-generation-service
+    build:
+      context: .
+      dockerfile: ./services/result-generation-service/Dockerfile
     ports:
       - "8085:8085"
     depends_on:

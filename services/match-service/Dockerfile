@@ -1,14 +1,20 @@
 FROM golang:1.22.6-alpine
 
+# Устанавливаем рабочую директорию
 WORKDIR /app
 
+# Копируем только необходимые файлы
 COPY go.mod go.sum ./
 RUN go mod download
 
+# Копируем весь проект
 COPY . .
 
-RUN go build -o match-service .
+# Переходим в директорию сервиса
+WORKDIR /app/services/match-service
 
-EXPOSE 8083
+# Собираем бинарный файл
+RUN go build -o main .
 
-CMD ["./match-service"]
+# Команда для запуска
+CMD ["./main"]
