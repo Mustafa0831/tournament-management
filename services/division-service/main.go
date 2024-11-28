@@ -1,3 +1,4 @@
+// Package divisionservice provides functionalities for managing divisions.
 package main
 
 import (

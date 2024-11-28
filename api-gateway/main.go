@@ -1,3 +1,4 @@
+// Package main implements the API Gateway for tournament management.
 package main
 
 import (
