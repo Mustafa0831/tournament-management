@@ -41,6 +41,7 @@ func main() {
 	router.Run(":8080")
 }
 
+// reverseProxy создает обработчик для маршрутизации запросов.
 func reverseProxy(target *url.URL) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		proxy := httputil.NewSingleHostReverseProxy(target)
